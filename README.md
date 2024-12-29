@@ -37,7 +37,7 @@ npm start
 npm run dev
 ```
 ## Deployment
-The Project is deployed on Vercel. The live project is accessible at [here]().
+The Project can be deployed on Vercel in future.
 
 ## Contributing
 We welcome contributions to improve and expand the features of this web app. If you have any ideas or want to report issues, feel free to create a pull request or submit an issue in the repository.

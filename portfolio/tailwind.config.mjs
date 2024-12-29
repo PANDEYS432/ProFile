@@ -11,6 +11,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backdropBlur: {
+        sm: '4px', // You can adjust this value for more or less blur
+      },
     },
   },
   plugins: [],

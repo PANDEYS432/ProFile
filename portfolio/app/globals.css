@@ -3,25 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #023D54; /* Primary color */
+  --secondary-color: #9A6735; /* Secondary color */
+  --accent-color: #94DEA5; /* Accent color */
+  --highlight-color: #ffff66; /* Highlight color */
+  --foreground-rgb: 255, 255, 255; /* Default foreground color (white text) */
+  --background-color: #023D54; /* Set background color to primary color */
 }
 
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* Foreground color in dark mode (white text) */
+    --background-color: #023D54; /* Keep background as primary color in dark mode */
   }
 }
 
+/* Global body styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb)); /* Set text color */
+  background-color: rgb(var(--background-color)); /* Set background color to primary */
+  margin: 0; /* Remove default body margin */
+  font-family: 'Inter', sans-serif; /* Default font-family */
+  line-height: 1.6; /* Line height for readability */
+}
+
+/* Additional styles for links and buttons to use theme colors */
+a {
+  color: var(--highlight-color); /* Use highlight color for links */
+}
+
+button {
+  background-color: var(--secondary-color); /* Use secondary color for buttons */
+  color: #ffffff; /* Button text color */
+}
+
+button:hover {
+  background-color: var(--accent-color); /* Change button color on hover */
+}
+
+/* Highlight text color */
+.highlight {
+  color: var(--highlight-color); /* Use highlight color for emphasized text */
+}
+@layer utilities {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    background-size: 300% 300%;
+    animation: gradient 6s ease infinite;
+  }
 }
